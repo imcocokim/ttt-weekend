@@ -38,5 +38,15 @@ function render() {
       squareEls[idx].textContent = "O"
     }
   }) 
+  renderMsg()
 }
 
+function renderMsg () {
+  if (winner === null) {
+    messageEl.textContent = `It's ${turn === 1 ? "X" : "O"}'s turn!`
+  } else if (winner === 'T') {
+    messageEl.textContent = `It's a TIE! Try again!`
+  } else {
+    messageEl.textContent = `${turn === 1 ? "O" : "X"} is the winner!`
+  }
+}
