@@ -38,14 +38,7 @@ function init() {
 
 function render() {
   board.forEach((square, idx) => {
-
-    if (square === 1) {
-      squareEls[idx].textContent = "X"
-    } 
-    
-    if (square === -1) {
-      squareEls[idx].textContent = "O"
-    }
+    square === 1 ? (squareEls[idx].textContent = "X") : square === -1 ? (squareEls[idx].textContent = "O") : null
     if (!square) {
       squareEls[idx].textContent = " "
     }
