@@ -22,3 +22,13 @@ div {
   text-align: center;
   vertical-align: middle;
 }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+button {
+
+}
