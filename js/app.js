@@ -23,7 +23,10 @@ const messageEl = document.querySelector('h2')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-board.addEventListener('click', handleClick)
+squareEls.forEach(function(square) {
+  square.addEventListener('click', handleClick)
+  }
+)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -61,5 +64,6 @@ function renderMsg () {
 }
 
 function handleClick(evt){
- 
+  const sqIdx = evt.target.id.substring(2)
+  return
 }
