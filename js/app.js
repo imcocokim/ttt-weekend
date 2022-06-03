@@ -28,12 +28,11 @@ squareEls.forEach(function(square) {
   }
 )
 
-
 /*-------------------------------- Functions --------------------------------*/
 init ()
 
 function init() {
-  board = [null, 1, null, null, null, null, null, null, null]
+  board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
   render()
@@ -70,5 +69,19 @@ function handleClick(evt){
   }
   board[sqIdx] = turn
   turn *= -1
+  winner = getWinner()
+  render()
 }
 
+function getWinner() {
+  winningCombos.forEach(function (winningCombo) {
+
+    console.log(winningCombo, "winning combo")
+    console.log(winningCombo[0], "first element in the array")
+    console.log(board[winningCombo[0]], "position")
+    console.log(board[winningCombo[1]], "position")
+    console.log(board[winningCombo[2]], "position")
+
+
+  })
+}
