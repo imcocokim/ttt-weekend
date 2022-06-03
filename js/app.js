@@ -25,7 +25,7 @@ squareEls.forEach(function(square) {
   }
 )
 
-resetBtn.addEventListener('click', reset) 
+resetBtn.addEventListener('click', init) 
 
 /*-------------------------------- Functions --------------------------------*/
 init ()
@@ -77,8 +77,7 @@ function handleClick(evt){
 
 function getWinner() {
   winningCombos.forEach(function (winningCombo) {
-    let sum = board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]]
-    if (Math.abs(sum) === 3) {
+    if (Math.abs(board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]]) === 3) {
       winner = turn
     } if (board.includes(null) === false) {
       winner = 'T'
@@ -87,6 +86,4 @@ function getWinner() {
   return null
 }
 
-function reset() {
-    init()
-  }
+
