@@ -9,17 +9,14 @@ const winningCombos = [
   [0, 4, 8],
   [2, 4, 6]
 ]
-
-
 /*---------------------------- Variables (state) ----------------------------*/
 let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll('.square')
-
 const messageEl = document.querySelector('h2')
-
+const resetBtn = document.querySelector('button')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -27,6 +24,8 @@ squareEls.forEach(function(square) {
   square.addEventListener('click', handleClick)
   }
 )
+
+resetBtn.addEventListener('click', reset) 
 
 /*-------------------------------- Functions --------------------------------*/
 init ()
@@ -47,6 +46,9 @@ function render() {
     
     if (square === -1) {
       squareEls[idx].textContent = "O"
+    }
+    if (!square) {
+      squareEls[idx].textContent = " "
     }
   }) 
   renderMsg()
@@ -69,19 +71,22 @@ function handleClick(evt){
   }
   board[sqIdx] = turn
   turn *= -1
-  winner = getWinner()
+  getWinner()
   render()
 }
 
 function getWinner() {
   winningCombos.forEach(function (winningCombo) {
-
-    console.log(winningCombo, "winning combo")
-    console.log(winningCombo[0], "first element in the array")
-    console.log(board[winningCombo[0]], "position")
-    console.log(board[winningCombo[1]], "position")
-    console.log(board[winningCombo[2]], "position")
-
-
+    let sum = board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]]
+    if (Math.abs(sum) === 3) {
+      winner = turn
+    } if (board.includes(null) === false) {
+      winner = 'T'
+    }
   })
+  return null
 }
+
+function reset() {
+    init()
+  }
