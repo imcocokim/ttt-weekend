@@ -33,7 +33,7 @@ squareEls.forEach(function(square) {
 init ()
 
 function init() {
-  board = [null, null, null, null, null, null, null, null, null]
+  board = [null, 1, null, null, null, null, null, null, null]
   turn = 1
   winner = null
   render()
@@ -64,6 +64,11 @@ function renderMsg () {
 }
 
 function handleClick(evt){
-  const sqIdx = evt.target.id.substring(2)
+  const sqIdx = parseInt(evt.target.id.substring(2))
+  if (board[sqIdx] !== null || winner !== null){
   return
+  }
+  board[sqIdx] = turn
+  turn *= -1
 }
+
