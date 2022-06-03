@@ -38,7 +38,9 @@ function init() {
 
 function render() {
   board.forEach((square, idx) => {
-    square === 1 ? (squareEls[idx].textContent = "X") : square === -1 ? (squareEls[idx].textContent = "O") : null
+    if (square !== null) {
+      squareEls[idx].textContent = square === 1 ? 'X' : 'O'
+    }
     if (!square) {
       squareEls[idx].textContent = " "
     }
@@ -69,6 +71,7 @@ function handleClick(evt){
 
 function getWinner() {
   winningCombos.forEach(function (winningCombo) {
+    console.log(board[winningCombo[0]])
     if (Math.abs(board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]]) === 3) {
       winner = turn
     } if (board.includes(null) === false) {
