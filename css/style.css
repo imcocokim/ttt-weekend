@@ -34,11 +34,12 @@ button {
   border: rgb(184, 14, 11);
 	font-weight: lighter;
   font-size: 25px;
-  background-color: #457b9d;
+  background-color: #6c757d;
   border-radius: 5%;
   margin: 20px;
   height: 45px;
   width: 100px;
+  color: #212529;
 }
 
 h1 {

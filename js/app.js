@@ -70,14 +70,15 @@ function handleClick(evt){
 }
 
 function getWinner() {
-  winningCombos.forEach(function (winningCombo) {
-    if (Math.abs(board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]]) === 3) {
+  for(let i = 0; i < winningCombos.length; i++) {
+    if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]) === 3) {
       winner = turn
-    } if (board.includes(null) === false) {
+      return
+    }else if (board.includes(null) === false) {
       winner = 'T'
     }
-  })
-  return null
+  }
 }
 
+//
 
