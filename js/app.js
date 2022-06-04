@@ -101,5 +101,11 @@ function getWinner() {
 //not sure if it is best practice but it works.
 
 //handleClick()
-//played around with also parseInt(evt.target.id.substring(2))
+//evt.target.id.substring(2) = pulling the integer which is index of 2 from the id name sq0
+//played around with also parseInt(evt.target.id.substring(2)) if it was neccessary
 //it works without parseInt. Thought that we would have to change it into and integer because it was intially coming out of a string.
+
+//renderMsg()
+//THIS BLEW/MESSED UP MY MIND with the help of emily
+//messageEl.textContent = `${turn === 1 ? "O" : "X"} is the winner!`
+//the next TURN would be stated as the winner so it has to be this 1 = "O" and -1 = "X"
