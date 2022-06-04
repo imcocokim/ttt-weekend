@@ -1,9 +1,9 @@
 body {
-  background-image: url('https://images.unsplash.com/photo-1614292253351-4deb4913c142?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+  background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
   background-size: cover;
   background-color: #343a40;
 	/*Use a system font, if none are available use an available sans-sarif   font */
-	font-family: cursive, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+	font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	margin: 0;
   height: 100vh;
@@ -13,6 +13,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   color: #adb5bd;
+  font-weight: lighter;
 }
 
 section.board {
@@ -31,16 +32,36 @@ div {
 
 button {
   border: rgb(184, 14, 11);
-	font-weight: 400;
+	font-weight: lighter;
   font-size: 25px;
   background-color: #457b9d;
   border-radius: 5%;
-  margin: 0 0 20px ;
-  height: 50px;
+  margin: 20px;
+  height: 45px;
   width: 100px;
 }
 
-h1,
+h1 {
+  font-size: 60px;
+  margin: 20px;
+}
+
 h2 {
+  font-size: 40px;
+  margin: 0 0 20px;
+}
+
+h1,
+h2,
+a:link {
   color: #adb5bd;
+  font-weight: lighter;
+}
+
+a:visited {
+  color: #9f86c0;
+}
+
+a:active {
+  color: #fcbf49;
 }
