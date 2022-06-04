@@ -59,7 +59,7 @@ function renderMsg () {
 }
 
 function handleClick(evt){
-  const sqIdx = parseInt(evt.target.id.substring(2))
+  const sqIdx = evt.target.id.substring(2)
   if (board[sqIdx] !== null || winner !== null){
   return
   }
@@ -74,11 +74,32 @@ function getWinner() {
     if (Math.abs(board[winningCombos[i][0]] + board[winningCombos[i][1]] + board[winningCombos[i][2]]) === 3) {
       winner = turn
       return
-    }else if (board.includes(null) === false) {
+    } else if (!board.includes(null)) {
       winner = 'T'
     }
   }
 }
 
-//
 
+//render()
+//wanted to simplify code below. Ben suggestedn lines 41-42
+//if (square === 1) {
+//   squareEls[idx].textContent = "X"
+// } 
+// if (square === -1) {
+//   squareEls[idx].textContent = "O"
+// }
+// this worked but suggested that we should not use it because a ternary is meant to have two options:
+//square === 1 ? (squareEls[idx].textContent = "X") : square === -1 ? (squareEls[idx].textContent = "O") : null 
+
+//getWinner() notes what these represent. Used console.log a thousand times to truly understanding what parts they were calling.
+//winningCombos[0] = first array within winningCombos array
+//winningCombos[0][0] = [index of array][index of element]
+
+//getWinner()
+//changed board.includes(null) === false to !board.includes(null) line 77
+//not sure if it is best practice but it works.
+
+//handleClick()
+//played around with also parseInt(evt.target.id.substring(2))
+//it works without parseInt. Thought that we would have to change it into and integer because it was intially coming out of a string.
