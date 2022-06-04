@@ -71,7 +71,6 @@ function handleClick(evt){
 
 function getWinner() {
   winningCombos.forEach(function (winningCombo) {
-    console.log(board[winningCombo[0]])
     if (Math.abs(board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]]) === 3) {
       winner = turn
     } if (board.includes(null) === false) {
