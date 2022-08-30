@@ -1,5 +1,5 @@
 # TIC-TAC-TOE
-A classic game of tic-tac-toe built.
+A classic game of tic-tac-toe.
 <p>
 
 [Click here to get to the Deployed Link](https://tictactoe-coco.netlify.app/)
@@ -9,6 +9,7 @@ A classic game of tic-tac-toe built.
 ## Users are able to:
 - play tic-tac-toe with another player
 - reset the game
+- play on any device
 
 ## Website Preview
 ![Preview](./assets/images/ttt.png)
